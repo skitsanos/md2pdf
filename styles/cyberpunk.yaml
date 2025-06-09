@@ -1,0 +1,113 @@
+meta:
+  name: "Cyberpunk"
+  description: "Futuristic cyberpunk theme with neon colors"
+  author: "md2pdf"
+  version: "1.0"
+
+variables:
+  primary_color: "#00ff00"
+  secondary_color: "#ff00ff"
+  background_color: "#1a1a1a"
+  text_color: "#00ff00"
+  accent_color: "#ff00ff"
+  font_family: "'JetBrains Mono', monospace"
+  font_size: "11pt"
+
+selectors:
+  page:
+    backgroundColor: "${background_color}"
+    margin: "20mm"
+
+  body:
+    fontFamily: "${font_family}"
+    fontSize: "${font_size}"
+    lineHeight: "1.6"
+    color: "${text_color}"
+    backgroundColor: "${background_color}"
+    margin: "0"
+    padding: "0"
+
+  "h1, h2, h3, h4, h5, h6":
+    fontFamily: "${font_family}"
+    fontWeight: "700"
+    textTransform: "uppercase"
+    letterSpacing: "2pt"
+    textShadow: "0 0 10pt ${primary_color}"
+
+  h1:
+    fontSize: "24pt"
+    color: "${accent_color}"
+    textAlign: "center"
+    border: "2pt solid ${accent_color}"
+    padding: "12pt"
+    marginBottom: "24pt"
+
+  h2:
+    fontSize: "18pt"
+    color: "${primary_color}"
+    borderBottom: "1pt solid ${primary_color}"
+    paddingBottom: "6pt"
+
+  h3:
+    fontSize: "14pt"
+    color: "${accent_color}"
+
+  code:
+    fontFamily: "${font_family}"
+    backgroundColor: "#1a1a1a"
+    color: "${primary_color}"
+    padding: "2pt 4pt"
+    border: "1pt solid ${primary_color}"
+    borderRadius: "3pt"
+
+  pre:
+    fontFamily: "${font_family}"
+    backgroundColor: "#1a1a1a"
+    color: "${text_color}"
+    padding: "12pt"
+    border: "1pt solid ${primary_color}"
+    borderRadius: "6pt"
+    overflow: "auto"
+    margin: "12pt 0"
+
+  "pre code":
+    background: "none"
+    border: "none"
+    padding: "0"
+
+  table:
+    borderCollapse: "collapse"
+    width: "100%"
+    margin: "12pt 0"
+    border: "2pt solid ${primary_color}"
+
+  "th, td":
+    border: "1pt solid ${primary_color}"
+    padding: "8pt 12pt"
+    textAlign: "left"
+
+  th:
+    backgroundColor: "#1a1a1a"
+    color: "${accent_color}"
+    fontWeight: "700"
+
+  blockquote:
+    margin: "12pt 0"
+    padding: "0 12pt"
+    borderLeft: "4pt solid ${accent_color}"
+    color: "${accent_color}"
+    fontStyle: "italic"
+    backgroundColor: "#1a1a1a"
+
+  a:
+    color: "${accent_color}"
+    textDecoration: "none"
+    textShadow: "0 0 5pt ${accent_color}"
+
+  "ul, ol":
+    margin: "12pt 0"
+    paddingLeft: "24pt"
+
+  li:
+    margin: "6pt 0"
+    color: "${text_color}"

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        {{ css_content }}
+    </style>
+</head>
+<body>
+    {% if toc %}
+    <div class="table-of-contents">
+        <h2>Table of Contents</h2>
+        {{ toc_content }}
+    </div>
+    <div class="page-break"></div>
+    {% endif %}
+    
+    <div class="content">
+        {{ content }}
+    </div>
+</body>
+</html>
+
