@@ -22,7 +22,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     package_data={
-        'md2pdf': ['templates/*.html', 'styles/*.yaml', 'styles/*.md'],
+        '': ['templates/*.html', 'styles/*.yaml', 'styles/*.md'],
     },
     install_requires=[
         "click>=8.0.0",

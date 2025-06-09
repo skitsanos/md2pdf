@@ -16,6 +16,7 @@ A powerful Python CLI tool that converts one or more Markdown documents into a s
 - ✅ Security features (input sanitization, path validation)
 - ✅ Production-ready logging system
 - ✅ Cross-platform compatibility
+- ✅ Docker support for containerized usage
 
 ## Installation
 
@@ -25,6 +26,18 @@ A powerful Python CLI tool that converts one or more Markdown documents into a s
 git clone https://github.com/skitsanos/md2pdf.git
 cd md2pdf
 pip install -e .
+```
+
+### Using Docker
+
+```bash
+# Build the Docker image
+git clone https://github.com/skitsanos/md2pdf.git
+cd md2pdf
+docker build -t md2pdf .
+
+# Or pull from Docker Hub (when published)
+docker pull skitsanos/md2pdf
 ```
 
 ### Using pip (when published)
@@ -92,6 +105,25 @@ md2pdf report.md --output report.pdf --page-size Letter
 
 # Verbose output for debugging
 md2pdf document.md --output output.pdf --verbose
+```
+
+### Docker Usage
+
+```bash
+# Convert single file (mount current directory)
+docker run --rm -v "$(pwd):/docs" md2pdf document.md -o report.pdf
+
+# Convert with specific style
+docker run --rm -v "$(pwd):/docs" md2pdf README.md -o readme.pdf --style github
+
+# Convert multiple files with table of contents
+docker run --rm -v "$(pwd):/docs" md2pdf docs/*.md -o manual.pdf --toc --style academic
+
+# Convert with custom CSS (mount CSS file directory)
+docker run --rm -v "$(pwd):/docs" -v "/path/to/css:/css" md2pdf document.md -o styled.pdf --style /css/custom.css
+
+# Interactive mode for multiple operations
+docker run -it --rm -v "$(pwd):/docs" md2pdf /bin/bash
 ```
 
 ### Command Line Options
@@ -178,6 +210,19 @@ md2pdf docs/intro.md docs/guide.md docs/api.md --output complete-docs.pdf --toc
 ### Use custom CSS styling
 ```bash
 md2pdf document.md --output styled-doc.pdf --style company-style.css
+```
+
+### Docker Examples
+
+```bash
+# Corporate report with Docker
+docker run --rm -v "$(pwd):/docs" md2pdf report.md -o report.pdf --style ibm --title "Q4 Report"
+
+# Academic paper with TOC using Docker
+docker run --rm -v "$(pwd):/docs" md2pdf paper.md -o paper.pdf --style academic --toc
+
+# Multiple documentation files
+docker run --rm -v "$(pwd):/docs" md2pdf docs/*.md -o complete-docs.pdf --toc --style github
 ```
 
 ## Supported Markdown Features
