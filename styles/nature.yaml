@@ -1,0 +1,118 @@
+meta:
+  name: "Nature"
+  description: "Earth-toned theme inspired by nature"
+  author: "md2pdf"
+  version: "1.0"
+
+variables:
+  primary_color: "#2d5016"
+  secondary_color: "#8b4513"
+  background_color: "#f5f5dc"
+  text_color: "#2f4f2f"
+  accent_color: "#228b22"
+  font_family: "'Georgia', 'Times New Roman', serif"
+  font_size: "11pt"
+  heading_font: "'Playfair Display', 'Georgia', serif"
+
+selectors:
+  page:
+    backgroundColor: "${background_color}"
+    margin: "20mm"
+
+  body:
+    fontFamily: "${font_family}"
+    fontSize: "${font_size}"
+    lineHeight: "1.7"
+    color: "${text_color}"
+    backgroundColor: "${background_color}"
+    margin: "0"
+    padding: "0"
+    textAlign: "justify"
+
+  "h1, h2, h3, h4, h5, h6":
+    fontFamily: "${heading_font}"
+    color: "${primary_color}"
+    marginTop: "24pt"
+    marginBottom: "12pt"
+
+  h1:
+    fontSize: "28pt"
+    textAlign: "center"
+    color: "${secondary_color}"
+    marginBottom: "36pt"
+    fontWeight: "400"
+
+  h2:
+    fontSize: "20pt"
+    color: "${primary_color}"
+    borderBottom: "2pt solid ${accent_color}"
+    paddingBottom: "8pt"
+
+  h3:
+    fontSize: "16pt"
+    color: "${accent_color}"
+    fontStyle: "italic"
+
+  p:
+    margin: "0 0 14pt 0"
+    textIndent: "18pt"
+
+  "h1 + p, h2 + p, h3 + p":
+    textIndent: "0"
+
+  code:
+    fontFamily: "'Courier New', monospace"
+    backgroundColor: "#f0f8f0"
+    color: "${primary_color}"
+    padding: "2pt 4pt"
+    border: "1pt solid ${accent_color}"
+    borderRadius: "3pt"
+
+  pre:
+    fontFamily: "'Courier New', monospace"
+    backgroundColor: "#f0f8f0"
+    color: "${text_color}"
+    padding: "16pt"
+    border: "1pt solid ${accent_color}"
+    borderRadius: "8pt"
+    margin: "18pt 0"
+
+  table:
+    borderCollapse: "collapse"
+    width: "100%"
+    margin: "18pt 0"
+    backgroundColor: "#ffffff"
+    borderRadius: "8pt"
+    overflow: "hidden"
+    boxShadow: "0 2pt 8pt rgba(45, 80, 22, 0.1)"
+
+  "th, td":
+    border: "1pt solid ${accent_color}"
+    padding: "10pt 14pt"
+    textAlign: "left"
+
+  th:
+    backgroundColor: "${primary_color}"
+    color: "#ffffff"
+    fontWeight: "600"
+
+  blockquote:
+    margin: "18pt 24pt"
+    padding: "12pt 18pt"
+    borderLeft: "4pt solid ${accent_color}"
+    backgroundColor: "#f0f8f0"
+    fontStyle: "italic"
+    borderRadius: "0 8pt 8pt 0"
+
+  a:
+    color: "${accent_color}"
+    textDecoration: "none"
+    borderBottom: "1pt dotted ${accent_color}"
+
+  img:
+    maxWidth: "100%"
+    height: "auto"
+    borderRadius: "8pt"
+    margin: "18pt auto"
+    display: "block"
+    border: "2pt solid ${accent_color}"

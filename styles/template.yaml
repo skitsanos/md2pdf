@@ -1,0 +1,145 @@
+# YAML Style Template for md2pdf
+# Copy this file and customize it to create your own styles
+
+meta:
+  name: "My Custom Style"
+  description: "A custom style created by me"
+  author: "Your Name"
+  version: "1.0"
+
+# Define variables that can be reused throughout the style
+variables:
+  primary_color: "#333333"
+  secondary_color: "#666666"
+  background_color: "#ffffff"
+  text_color: "#333333"
+  accent_color: "#0066cc"
+  font_family: "'Arial', sans-serif"
+  heading_font: "'Arial', sans-serif"
+  mono_font: "'Courier New', monospace"
+  font_size: "11pt"
+  margin: "20mm"
+
+# CSS selectors and their properties
+# Property names can be in camelCase (they'll be converted to kebab-case)
+selectors:
+  # Page settings
+  page:
+    backgroundColor: "${background_color}"
+    margin: "${margin}"
+
+  # Body text
+  body:
+    fontFamily: "${font_family}"
+    fontSize: "${font_size}"
+    lineHeight: "1.6"
+    color: "${text_color}"
+    backgroundColor: "${background_color}"
+    margin: "0"
+    padding: "0"
+
+  # All headings
+  "h1, h2, h3, h4, h5, h6":
+    fontFamily: "${heading_font}"
+    color: "${primary_color}"
+    fontWeight: "600"
+    marginTop: "24pt"
+    marginBottom: "12pt"
+
+  # Individual heading levels
+  h1:
+    fontSize: "24pt"
+    color: "${accent_color}"
+    textAlign: "center"
+    marginBottom: "36pt"
+
+  h2:
+    fontSize: "18pt"
+    borderBottom: "1pt solid ${secondary_color}"
+    paddingBottom: "6pt"
+
+  h3:
+    fontSize: "14pt"
+
+  # Paragraphs
+  p:
+    margin: "0 0 12pt 0"
+    textAlign: "justify"
+
+  # Code elements
+  code:
+    fontFamily: "${mono_font}"
+    fontSize: "10pt"
+    backgroundColor: "#f5f5f5"
+    color: "${accent_color}"
+    padding: "2pt 4pt"
+    borderRadius: "3pt"
+
+  pre:
+    fontFamily: "${mono_font}"
+    fontSize: "10pt"
+    backgroundColor: "#f5f5f5"
+    padding: "12pt"
+    borderRadius: "6pt"
+    margin: "12pt 0"
+    overflow: "auto"
+
+  # Tables
+  table:
+    borderCollapse: "collapse"
+    width: "100%"
+    margin: "12pt 0"
+
+  "th, td":
+    border: "1pt solid ${secondary_color}"
+    padding: "8pt 12pt"
+    textAlign: "left"
+
+  th:
+    backgroundColor: "#f0f0f0"
+    fontWeight: "600"
+
+  # Blockquotes
+  blockquote:
+    margin: "12pt 0"
+    padding: "0 12pt"
+    borderLeft: "4pt solid ${accent_color}"
+    color: "${secondary_color}"
+    fontStyle: "italic"
+
+  # Links
+  a:
+    color: "${accent_color}"
+    textDecoration: "none"
+
+  # Lists
+  "ul, ol":
+    margin: "12pt 0"
+    paddingLeft: "24pt"
+
+  li:
+    margin: "6pt 0"
+
+# Alternative: Use a template approach for more complex styles
+# Uncomment the section below and comment out the selectors above to use template mode
+
+# template: |
+#   /* {{ meta.description }} */
+#   
+#   @page {
+#       background-color: {{ variables.background_color }};
+#       margin: {{ variables.margin }};
+#   }
+#   
+#   body {
+#       font-family: {{ variables.font_family }};
+#       font-size: {{ variables.font_size }};
+#       color: {{ variables.text_color }};
+#   }
+#   
+#   h1 {
+#       font-size: 24pt;
+#       color: {{ variables.accent_color }};
+#   }
+#   
+#   /* Add more CSS rules here... */

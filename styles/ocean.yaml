@@ -1,0 +1,202 @@
+meta:
+  name: "Ocean"
+  description: "Calming ocean-themed style with blue gradients"
+  author: "md2pdf"
+  version: "1.0"
+
+variables:
+  deep_blue: "#003366"
+  ocean_blue: "#0066cc"
+  light_blue: "#66ccff"
+  foam_white: "#f0f8ff"
+  wave_blue: "#4d9eff"
+  text_color: "#1a1a1a"
+  
+template: |
+  /* {{ meta.description }} */
+  
+  @page {
+      background: linear-gradient(to bottom, {{ variables.foam_white }} 0%, {{ variables.light_blue }} 100%);
+      margin: 25mm;
+  }
+  
+  body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 11pt;
+      line-height: 1.7;
+      color: {{ variables.text_color }};
+      margin: 0;
+      padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: {{ variables.deep_blue }};
+      margin-top: 28pt;
+      margin-bottom: 14pt;
+  }
+  
+  h1 {
+      font-size: 32pt;
+      text-align: center;
+      background: linear-gradient(45deg, {{ variables.ocean_blue }}, {{ variables.wave_blue }});
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 42pt;
+      font-weight: 300;
+      letter-spacing: 1pt;
+  }
+  
+  h2 {
+      font-size: 22pt;
+      color: {{ variables.ocean_blue }};
+      border-bottom: 3pt solid {{ variables.light_blue }};
+      padding-bottom: 8pt;
+      font-weight: 400;
+  }
+  
+  h3 {
+      font-size: 18pt;
+      color: {{ variables.wave_blue }};
+      font-weight: 500;
+  }
+  
+  h4 {
+      font-size: 14pt;
+      color: {{ variables.ocean_blue }};
+  }
+  
+  h5, h6 {
+      font-size: 12pt;
+      color: {{ variables.deep_blue }};
+  }
+  
+  p {
+      margin: 0 0 16pt 0;
+      text-align: justify;
+      hyphens: auto;
+  }
+  
+  ul, ol {
+      margin: 16pt 0;
+      padding-left: 28pt;
+  }
+  
+  li {
+      margin: 8pt 0;
+      line-height: 1.6;
+  }
+  
+  code {
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      font-size: 10pt;
+      background: {{ variables.foam_white }};
+      color: {{ variables.deep_blue }};
+      padding: 3pt 6pt;
+      border-radius: 4pt;
+      border: 1pt solid {{ variables.light_blue }};
+  }
+  
+  pre {
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      font-size: 10pt;
+      background: linear-gradient(135deg, {{ variables.foam_white }} 0%, #e6f3ff 100%);
+      color: {{ variables.text_color }};
+      padding: 18pt;
+      border-radius: 8pt;
+      border-left: 4pt solid {{ variables.ocean_blue }};
+      margin: 20pt 0;
+      overflow-x: auto;
+      box-shadow: 0 2pt 8pt rgba(0, 102, 204, 0.1);
+  }
+  
+  pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: {{ variables.text_color }};
+  }
+  
+  table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20pt 0;
+      background: {{ variables.foam_white }};
+      border-radius: 8pt;
+      overflow: hidden;
+      box-shadow: 0 4pt 12pt rgba(0, 102, 204, 0.15);
+  }
+  
+  th, td {
+      padding: 12pt 16pt;
+      text-align: left;
+      border-bottom: 1pt solid {{ variables.light_blue }};
+  }
+  
+  th {
+      background: linear-gradient(45deg, {{ variables.ocean_blue }}, {{ variables.wave_blue }});
+      color: white;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5pt;
+      font-size: 10pt;
+  }
+  
+  tr:nth-child(even) {
+      background: rgba(102, 204, 255, 0.05);
+  }
+  
+  tr:hover {
+      background: rgba(102, 204, 255, 0.1);
+  }
+  
+  blockquote {
+      margin: 20pt 0;
+      padding: 16pt 20pt;
+      background: {{ variables.foam_white }};
+      border-left: 4pt solid {{ variables.wave_blue }};
+      border-radius: 0 8pt 8pt 0;
+      font-style: italic;
+      color: {{ variables.deep_blue }};
+      box-shadow: 0 2pt 8pt rgba(77, 158, 255, 0.1);
+  }
+  
+  a {
+      color: {{ variables.ocean_blue }};
+      text-decoration: none;
+      border-bottom: 1pt dotted {{ variables.wave_blue }};
+      transition: all 0.3s ease;
+  }
+  
+  a:hover {
+      color: {{ variables.wave_blue }};
+      border-bottom-style: solid;
+  }
+  
+  img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8pt;
+      margin: 20pt auto;
+      display: block;
+      box-shadow: 0 4pt 12pt rgba(0, 102, 204, 0.2);
+      border: 2pt solid {{ variables.light_blue }};
+  }
+  
+  /* Special elements */
+  .highlight {
+      background: linear-gradient(45deg, {{ variables.foam_white }}, #e6f3ff);
+      padding: 2pt 6pt;
+      border-radius: 4pt;
+  }
+  
+  strong {
+      color: {{ variables.deep_blue }};
+      font-weight: 600;
+  }
+  
+  em {
+      color: {{ variables.ocean_blue }};
+      font-style: italic;
+  }

@@ -1,0 +1,123 @@
+meta:
+  name: "Retro"
+  description: "1980s retro style with synthwave colors"
+  author: "md2pdf"
+  version: "1.0"
+
+template: |
+  /* {{ meta.description }} */
+  
+  @page {
+      background: linear-gradient(45deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      margin: {{ variables.margin }};
+  }
+  
+  body {
+      font-family: {{ variables.font_family }};
+      font-size: {{ variables.font_size }};
+      line-height: 1.6;
+      color: {{ variables.text_color }};
+      background: linear-gradient(45deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      margin: 0;
+      padding: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+      font-family: {{ variables.heading_font }};
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3pt;
+      text-shadow: 0 0 20pt {{ variables.primary_color }};
+  }
+  
+  h1 {
+      font-size: 32pt;
+      color: {{ variables.primary_color }};
+      text-align: center;
+      margin-bottom: 36pt;
+      border: 3pt solid {{ variables.primary_color }};
+      padding: 18pt;
+      background: rgba(233, 69, 96, 0.1);
+  }
+  
+  h2 {
+      font-size: 22pt;
+      color: {{ variables.secondary_color }};
+      border-bottom: 2pt solid {{ variables.secondary_color }};
+      padding-bottom: 8pt;
+  }
+  
+  h3 {
+      font-size: 16pt;
+      color: {{ variables.accent_color }};
+  }
+  
+  code {
+      font-family: {{ variables.mono_font }};
+      background-color: rgba(0, 255, 255, 0.1);
+      color: {{ variables.accent_color }};
+      padding: 3pt 6pt;
+      border: 1pt solid {{ variables.accent_color }};
+      border-radius: 4pt;
+      text-shadow: 0 0 10pt {{ variables.accent_color }};
+  }
+  
+  pre {
+      font-family: {{ variables.mono_font }};
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(233, 69, 96, 0.1) 100%);
+      color: {{ variables.text_color }};
+      padding: 18pt;
+      border: 2pt solid {{ variables.accent_color }};
+      border-radius: 8pt;
+      margin: 24pt 0;
+      box-shadow: 0 0 30pt rgba(0, 255, 255, 0.3);
+  }
+  
+  table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 24pt 0;
+      border: 2pt solid {{ variables.primary_color }};
+      background: rgba(233, 69, 96, 0.05);
+  }
+  
+  th, td {
+      border: 1pt solid {{ variables.secondary_color }};
+      padding: 12pt 16pt;
+      text-align: left;
+  }
+  
+  th {
+      background: linear-gradient(45deg, {{ variables.primary_color }} 0%, {{ variables.secondary_color }} 100%);
+      color: #ffffff;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1pt;
+  }
+  
+  blockquote {
+      margin: 24pt 0;
+      padding: 18pt 24pt;
+      border-left: 6pt solid {{ variables.accent_color }};
+      background: rgba(0, 255, 255, 0.05);
+      font-style: italic;
+      box-shadow: 0 0 20pt rgba(0, 255, 255, 0.2);
+  }
+  
+  a {
+      color: {{ variables.accent_color }};
+      text-decoration: none;
+      text-shadow: 0 0 10pt {{ variables.accent_color }};
+      border-bottom: 1pt dotted {{ variables.accent_color }};
+  }
+
+variables:
+  primary_color: "#e94560"
+  secondary_color: "#f2a365" 
+  accent_color: "#00ffff"
+  text_color: "#ffffff"
+  font_family: "'Orbitron', 'Arial', sans-serif"
+  heading_font: "'Orbitron', 'Arial Black', sans-serif"
+  mono_font: "'Courier New', 'Share Tech Mono', monospace"
+  font_size: "11pt"
+  margin: "20mm"

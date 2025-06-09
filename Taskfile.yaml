@@ -1,0 +1,29 @@
+version: 3
+
+silent: true
+
+dotenv:
+  - .env
+
+tasks:
+  venv:
+    cmds:
+      - python3 -m venv .venv
+
+  install:
+    cmds:
+      - echo "Installing dependencies"
+      - |
+        source .venv/bin/activate
+        pip install -U pip
+        pip install -U -r requirements.txt
+
+  basic:
+    requires:
+      vars:
+        - SOURCE
+        - OUTPUT
+    cmds:
+      - |
+        source .venv/bin/activate
+        python run_md2pdf.py "{{.SOURCE}}" --output {{.OUTPUT}} --style ibm
