@@ -1,0 +1,188 @@
+meta:
+  name: "Purple Light"
+  description: "Light theme with purple headings and Montserrat typography"
+
+variables:
+  primary_purple: "#8B5FBF"
+  secondary_purple: "#A675D1"
+  accent_purple: "#C49AE4"
+  light_purple: "#E4D4F4"
+  dark_purple: "#6B46C1"
+  deep_purple: "#553C9A"
+  text_color: "#374151"
+  code_bg: "#F9FAFB"
+  border_color: "#E5E7EB"
+  main_font: "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+  mono_font: "'Monaco', 'Menlo', 'Ubuntu Mono', monospace"
+
+selectors:
+  page:
+    backgroundColor: "#FFFFFF"
+    margin: "20mm"
+
+  "html, body":
+    fontFamily: "${main_font}"
+    fontSize: "14px"
+    lineHeight: "1.6"
+    color: "${text_color}"
+    backgroundColor: "#FFFFFF"
+
+  h1:
+    color: "${deep_purple}"
+    fontSize: "2.5em"
+    fontWeight: "700"
+    marginTop: "0"
+    marginBottom: "0.5em"
+    borderBottom: "3px solid ${primary_purple}"
+    paddingBottom: "0.3em"
+
+  h2:
+    color: "${dark_purple}"
+    fontSize: "2em"
+    fontWeight: "600"
+    marginTop: "1.5em"
+    marginBottom: "0.5em"
+    borderBottom: "2px solid ${secondary_purple}"
+    paddingBottom: "0.2em"
+
+  h3:
+    color: "${primary_purple}"
+    fontSize: "1.5em"
+    fontWeight: "600"
+    marginTop: "1.2em"
+    marginBottom: "0.4em"
+
+  h4:
+    color: "${secondary_purple}"
+    fontSize: "1.25em"
+    fontWeight: "600"
+    marginTop: "1em"
+    marginBottom: "0.3em"
+
+  h5:
+    color: "${accent_purple}"
+    fontSize: "1.1em"
+    fontWeight: "600"
+    marginTop: "0.8em"
+    marginBottom: "0.3em"
+
+  h6:
+    color: "${accent_purple}"
+    fontSize: "1em"
+    fontWeight: "600"
+    marginTop: "0.8em"
+    marginBottom: "0.3em"
+
+  p:
+    marginBottom: "1em"
+    textAlign: "justify"
+
+  "code, pre":
+    fontFamily: "${mono_font}"
+
+  "code":
+    backgroundColor: "${code_bg}"
+    color: "${dark_purple}"
+    padding: "0.2em 0.4em"
+    borderRadius: "3px"
+    fontSize: "0.9em"
+    border: "1px solid ${border_color}"
+
+  "pre":
+    backgroundColor: "${code_bg}"
+    border: "1px solid ${border_color}"
+    borderRadius: "5px"
+    padding: "1em"
+    overflow: "auto"
+    marginBottom: "1em"
+
+  "pre code":
+    backgroundColor: "transparent"
+    border: "none"
+    padding: "0"
+
+  blockquote:
+    borderLeft: "4px solid ${primary_purple}"
+    marginLeft: "0"
+    paddingLeft: "1em"
+    fontStyle: "italic"
+    backgroundColor: "${light_purple}"
+    padding: "0.5em 1em"
+    borderRadius: "0 5px 5px 0"
+
+  table:
+    borderCollapse: "collapse"
+    width: "100%"
+    marginBottom: "1em"
+
+  "th, td":
+    border: "1px solid ${border_color}"
+    padding: "0.5em"
+    textAlign: "left"
+
+  th:
+    backgroundColor: "${light_purple}"
+    color: "${deep_purple}"
+    fontWeight: "600"
+
+  "tr:nth-child(even)":
+    backgroundColor: "#FAFAFA"
+
+  ul:
+    paddingLeft: "1.5em"
+
+  "ul li":
+    marginBottom: "0.3em"
+
+  "ul li::marker":
+    color: "${primary_purple}"
+
+  ol:
+    paddingLeft: "1.5em"
+
+  "ol li":
+    marginBottom: "0.3em"
+
+  "ol li::marker":
+    color: "${primary_purple}"
+    fontWeight: "600"
+
+  a:
+    color: "${primary_purple}"
+    textDecoration: "none"
+    borderBottom: "1px solid transparent"
+
+  "a:hover":
+    borderBottom: "1px solid ${primary_purple}"
+
+  hr:
+    border: "none"
+    height: "2px"
+    background: "linear-gradient(90deg, ${accent_purple}, ${primary_purple}, ${accent_purple})"
+    margin: "2em 0"
+
+  ".toc":
+    backgroundColor: "${light_purple}"
+    padding: "1em"
+    borderRadius: "5px"
+    marginBottom: "2em"
+    border: "1px solid ${secondary_purple}"
+
+  ".toc h2":
+    color: "${deep_purple}"
+    marginTop: "0"
+    fontSize: "1.5em"
+
+  ".toc ul":
+    listStyleType: "none"
+    paddingLeft: "0"
+
+  ".toc li":
+    marginBottom: "0.2em"
+
+  ".toc a":
+    color: "${dark_purple}"
+    textDecoration: "none"
+
+  ".toc a:hover":
+    color: "${primary_purple}"

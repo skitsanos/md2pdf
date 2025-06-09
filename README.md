@@ -6,7 +6,7 @@ A powerful Python CLI tool that converts one or more Markdown documents into a s
 
 - ✅ Convert single or multiple Markdown files to PDF
 - ✅ Support for glob patterns (e.g., `*.md`, `docs/*.md`)
-- ✅ 13+ built-in styles including corporate, dark mode, and themed options
+- ✅ 15+ built-in styles including corporate, dark mode, and themed options
 - ✅ YAML-based style system for easy customization
 - ✅ Custom CSS file support
 - ✅ Table of contents generation
@@ -83,9 +83,10 @@ md2pdf notes.md --output notes.pdf --style minimal
 md2pdf report.md --output report.pdf --style ibm
 
 # YAML-based themes
-md2pdf document.md --output doc.pdf --style cyberpunk
-md2pdf report.md --output report.pdf --style nature
-md2pdf slides.md --output slides.pdf --style retro
+md2pdf document.md --output doc.pdf --style purple-light
+md2pdf presentation.md --output slides.pdf --style purple-dark
+md2pdf report.md --output report.pdf --style cyberpunk
+md2pdf article.md --output article.pdf --style nature
 
 # Use custom CSS
 md2pdf document.md --output styled.pdf --style custom.css
@@ -153,6 +154,8 @@ docker run -it --rm -v "$(pwd):/docs" md2pdf /bin/bash
 
 ### YAML-based Themes
 - **ibm** - Corporate IBM Carbon Design System inspired theme
+- **purple-light** - Elegant light theme with purple headings and Montserrat typography
+- **purple-dark** - Dark mystique theme with purple accents and subtle glows
 - **cyberpunk** - Futuristic cyberpunk theme with neon colors
 - **nature** - Earth-toned theme inspired by nature
 - **ocean** - Calming ocean-themed style with blue gradients
@@ -251,6 +254,23 @@ task install
 
 # Convert with specific style (example)
 task basic SOURCE="document.md" OUTPUT="output.pdf"
+```
+
+## Sample Documents
+
+The `samples/` directory contains example Markdown documents to test and showcase md2pdf features:
+
+- **`samples/showcase.md`** - Comprehensive demonstration with all markdown features
+- **`samples/simple-example.md`** - Quick getting-started document
+- **`samples/README.md`** - Testing guide and usage instructions
+
+Try the new purple themes:
+```bash
+# Test purple light theme
+md2pdf samples/showcase.md -o showcase-light.pdf --style purple-light --toc
+
+# Test purple dark theme  
+md2pdf samples/showcase.md -o showcase-dark.pdf --style purple-dark --toc
 ```
 
 ## Error Handling

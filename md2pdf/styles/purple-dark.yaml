@@ -1,0 +1,220 @@
+meta:
+  name: "Purple Dark"
+  description: "Dark theme with purple accents and Montserrat typography"
+
+variables:
+  primary_purple: "#A78BFA"
+  secondary_purple: "#C4B5FD"
+  accent_purple: "#DDD6FE"
+  dark_purple: "#7C3AED"
+  deep_purple: "#5B21B6"
+  bg_color: "#0F0F23"
+  card_bg: "#1A1A2E"
+  text_color: "#E5E7EB"
+  muted_text: "#9CA3AF"
+  code_bg: "#16213E"
+  border_color: "#374151"
+  main_font: "'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+  mono_font: "'Monaco', 'Menlo', 'Ubuntu Mono', monospace"
+
+selectors:
+  page:
+    backgroundColor: "${bg_color}"
+    margin: "20mm"
+
+  "html, body":
+    fontFamily: "${main_font}"
+    fontSize: "14px"
+    lineHeight: "1.6"
+    color: "${text_color}"
+    backgroundColor: "${bg_color}"
+
+  h1:
+    color: "${accent_purple}"
+    fontSize: "2.5em"
+    fontWeight: "700"
+    marginTop: "0"
+    marginBottom: "0.5em"
+    borderBottom: "3px solid ${primary_purple}"
+    paddingBottom: "0.3em"
+    textShadow: "0 0 10px ${primary_purple}40"
+
+  h2:
+    color: "${secondary_purple}"
+    fontSize: "2em"
+    fontWeight: "600"
+    marginTop: "1.5em"
+    marginBottom: "0.5em"
+    borderBottom: "2px solid ${dark_purple}"
+    paddingBottom: "0.2em"
+
+  h3:
+    color: "${primary_purple}"
+    fontSize: "1.5em"
+    fontWeight: "600"
+    marginTop: "1.2em"
+    marginBottom: "0.4em"
+
+  h4:
+    color: "${secondary_purple}"
+    fontSize: "1.25em"
+    fontWeight: "600"
+    marginTop: "1em"
+    marginBottom: "0.3em"
+
+  h5:
+    color: "${accent_purple}"
+    fontSize: "1.1em"
+    fontWeight: "600"
+    marginTop: "0.8em"
+    marginBottom: "0.3em"
+
+  h6:
+    color: "${accent_purple}"
+    fontSize: "1em"
+    fontWeight: "600"
+    marginTop: "0.8em"
+    marginBottom: "0.3em"
+
+  p:
+    marginBottom: "1em"
+    textAlign: "justify"
+
+  "code, pre":
+    fontFamily: "${mono_font}"
+
+  "code":
+    backgroundColor: "${code_bg}"
+    color: "${accent_purple}"
+    padding: "0.2em 0.4em"
+    borderRadius: "3px"
+    fontSize: "0.9em"
+    border: "1px solid ${border_color}"
+
+  "pre":
+    backgroundColor: "${code_bg}"
+    border: "1px solid ${border_color}"
+    borderRadius: "5px"
+    padding: "1em"
+    overflow: "auto"
+    marginBottom: "1em"
+
+  "pre code":
+    backgroundColor: "transparent"
+    border: "none"
+    padding: "0"
+
+  blockquote:
+    borderLeft: "4px solid ${primary_purple}"
+    marginLeft: "0"
+    paddingLeft: "1em"
+    fontStyle: "italic"
+    backgroundColor: "${card_bg}"
+    padding: "0.5em 1em"
+    borderRadius: "0 5px 5px 0"
+    border: "1px solid ${border_color}"
+
+  table:
+    borderCollapse: "collapse"
+    width: "100%"
+    marginBottom: "1em"
+    backgroundColor: "${card_bg}"
+
+  "th, td":
+    border: "1px solid ${border_color}"
+    padding: "0.5em"
+    textAlign: "left"
+
+  th:
+    backgroundColor: "${deep_purple}"
+    color: "${accent_purple}"
+    fontWeight: "600"
+
+  "tr:nth-child(even)":
+    backgroundColor: "${bg_color}"
+
+  "tr:nth-child(odd)":
+    backgroundColor: "${card_bg}"
+
+  ul:
+    paddingLeft: "1.5em"
+
+  "ul li":
+    marginBottom: "0.3em"
+
+  "ul li::marker":
+    color: "${primary_purple}"
+
+  ol:
+    paddingLeft: "1.5em"
+
+  "ol li":
+    marginBottom: "0.3em"
+
+  "ol li::marker":
+    color: "${primary_purple}"
+    fontWeight: "600"
+
+  a:
+    color: "${primary_purple}"
+    textDecoration: "none"
+    borderBottom: "1px solid transparent"
+
+  "a:hover":
+    borderBottom: "1px solid ${primary_purple}"
+    textShadow: "0 0 5px ${primary_purple}60"
+
+  hr:
+    border: "none"
+    height: "2px"
+    background: "linear-gradient(90deg, ${deep_purple}, ${primary_purple}, ${accent_purple}, ${primary_purple}, ${deep_purple})"
+    margin: "2em 0"
+    boxShadow: "0 0 10px ${primary_purple}40"
+
+  ".toc":
+    backgroundColor: "${card_bg}"
+    padding: "1em"
+    borderRadius: "5px"
+    marginBottom: "2em"
+    border: "1px solid ${border_color}"
+    boxShadow: "0 0 15px ${primary_purple}20"
+
+  ".toc h2":
+    color: "${accent_purple}"
+    marginTop: "0"
+    fontSize: "1.5em"
+
+  ".toc ul":
+    listStyleType: "none"
+    paddingLeft: "0"
+
+  ".toc li":
+    marginBottom: "0.2em"
+
+  ".toc a":
+    color: "${secondary_purple}"
+    textDecoration: "none"
+
+  ".toc a:hover":
+    color: "${accent_purple}"
+    textShadow: "0 0 5px ${primary_purple}60"
+
+  strong:
+    color: "${secondary_purple}"
+
+  em:
+    color: "${muted_text}"
+
+  ".file-separator":
+    borderTop: "2px solid ${primary_purple}"
+    margin: "2em 0"
+    textAlign: "center"
+    position: "relative"
+
+  ".file-separator::before":
+    content: "'◆'"
+    backgroundColor: "${bg_color}"
+    color: "${primary_purple}"
+    padding: "0 1em"
+    position: "relative"
+    top: "-10px"
