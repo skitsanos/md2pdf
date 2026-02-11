@@ -99,7 +99,7 @@ def read_file_content(file_path: Path) -> str:
         File content as string
         
     Raises:
-        UnicodeDecodeError: If file encoding is not supported
+        FileValidationError: If file encoding is not supported
     """
     encodings = ENCODING_ATTEMPTS
     
@@ -111,7 +111,7 @@ def read_file_content(file_path: Path) -> str:
             continue
     
     attempted = ', '.join(encodings)
-    raise UnicodeDecodeError(
+    raise FileValidationError(
         f"Could not decode file {file_path}. Attempted encodings: {attempted}"
     )
 
@@ -172,4 +172,3 @@ def generate_toc_from_html(html_content: str) -> str:
     toc_html += "</ul>\n"
     
     return toc_html
-

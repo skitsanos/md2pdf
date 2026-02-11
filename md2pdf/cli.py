@@ -53,7 +53,7 @@ __version__ = "1.0.0"  # Define version here to avoid circular import
 @click.option(
     '--merge/--no-merge',
     default=True,
-    help='How to handle multiple files: merge into single document or separate sections. Default: merge'
+    help='How to handle multiple files: merge with separators or start each file on a new page. Default: merge'
 )
 @click.option(
     '--verbose', '-v',
@@ -171,4 +171,3 @@ def cli():
 # Make main the default command when called directly
 if __name__ == '__main__':
     main()
-

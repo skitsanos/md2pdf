@@ -8,7 +8,17 @@ dotenv:
 tasks:
   venv:
     cmds:
-      - python3 -m venv .venv
+      - |
+        set -e
+        for py in python3.13 python3.12 python3.11 python3.10; do
+          if command -v "$py" >/dev/null 2>&1; then
+            echo "Creating virtual environment with $py"
+            "$py" -m venv .venv
+            exit 0
+          fi
+        done
+        echo "No supported Python runtime found (expected one of: 3.13, 3.12, 3.11, 3.10)." >&2
+        exit 1
 
   install:
     cmds:
@@ -27,3 +37,25 @@ tasks:
       - |
         source .venv/bin/activate
         python run_md2pdf.py "{{.SOURCE}}" --output {{.OUTPUT}} --style ibm
+
+  smoke:
+    cmds:
+      - echo "Running smoke tests"
+      - |
+        set -e
+        source .venv/bin/activate
+
+        out_dir="/tmp/md2pdf-smoke"
+        mkdir -p "$out_dir"
+
+        python -m md2pdf samples/simple-example.md -o "$out_dir/simple.pdf"
+        python -m md2pdf samples/showcase.md -o "$out_dir/showcase-toc.pdf" --toc --style github
+        python -m md2pdf samples/README.md samples/simple-example.md samples/showcase.md -o "$out_dir/merged.pdf" --style ibm --merge
+        python -m md2pdf samples/README.md samples/simple-example.md samples/showcase.md -o "$out_dir/no-merge.pdf" --style ibm --no-merge
+
+        test -s "$out_dir/simple.pdf"
+        test -s "$out_dir/showcase-toc.pdf"
+        test -s "$out_dir/merged.pdf"
+        test -s "$out_dir/no-merge.pdf"
+
+        ls -lh "$out_dir"

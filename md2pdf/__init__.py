@@ -9,8 +9,18 @@ __version__ = "1.0.0"
 __author__ = "Manus AI"
 __description__ = "Convert Markdown documents to PDF with customizable styling"
 
-from .cli import main
-from .converter import MarkdownToPDFConverter
+
+def main(*args, **kwargs):
+    """Lazy CLI import to avoid hard runtime dependency during library-only imports."""
+    from .cli import main as cli_main
+    return cli_main(*args, **kwargs)
+
+
+def __getattr__(name):
+    if name == "MarkdownToPDFConverter":
+        from .converter import MarkdownToPDFConverter
+        return MarkdownToPDFConverter
+    raise AttributeError(f"module '{__name__}' has no attribute '{name}'")
+
 
 __all__ = ['main', 'MarkdownToPDFConverter', '__version__', '__author__', '__description__']
-

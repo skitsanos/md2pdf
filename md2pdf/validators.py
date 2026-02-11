@@ -48,20 +48,14 @@ def validate_css_file_path(css_path: str) -> Path:
         SecurityError: If path contains security risks
         FileValidationError: If file is invalid
     """
-    path = Path(css_path)
-    
-    # Resolve to absolute path and check for directory traversal
-    try:
-        resolved_path = path.resolve()
-        working_dir = Path.cwd().resolve()
-        
-        # Ensure the file is within the working directory or its subdirectories
-        # Allow absolute paths but log them
-        if not (resolved_path.is_relative_to(working_dir) or resolved_path.is_absolute()):
-            raise SecurityError(f"Path traversal detected in CSS file path: {css_path}")
-            
-    except Exception:
+    if not css_path or '\x00' in css_path:
         raise SecurityError(f"Invalid CSS file path: {css_path}")
+
+    # Allow both relative and absolute paths, but normalize before validation.
+    try:
+        resolved_path = Path(css_path).expanduser().resolve(strict=False)
+    except (OSError, RuntimeError) as exc:
+        raise SecurityError(f"Invalid CSS file path: {css_path}") from exc
     
     # Check file exists and is readable
     if not resolved_path.exists():

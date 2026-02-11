@@ -48,7 +48,7 @@ pip install md2pdf
 
 ## Requirements
 
-- Python 3.7 or higher
+- Python 3.10 or higher
 - Dependencies (automatically installed):
   - click>=8.0.0
   - markdown>=3.4.0

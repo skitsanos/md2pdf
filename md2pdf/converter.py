@@ -2,7 +2,6 @@
 Core Markdown to PDF conversion functionality.
 """
 
-import os
 import markdown
 import weasyprint
 from pathlib import Path
@@ -123,9 +122,13 @@ class MarkdownToPDFConverter(LoggerMixin):
             # Convert to HTML
             html = md.convert(content)
             
-            # Add file separator for multiple files
-            if merge_files and i > 0:
-                html_parts.append('<div class="file-separator"></div>')
+            # For multiple input files, either visually merge with separators
+            # or force each file to start on a new page.
+            if i > 0:
+                if merge_files:
+                    html_parts.append('<div class="file-separator"></div>')
+                else:
+                    html_parts.append('<div class="page-break"></div>')
             
             html_parts.append(html)
             
@@ -232,4 +235,3 @@ class MarkdownToPDFConverter(LoggerMixin):
             )
         except Exception as e:
             raise ConversionError(f"Failed to generate PDF: {e}")
-
